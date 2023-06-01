@@ -1,42 +1,22 @@
-package com.fintrack.ceva.entity;
+package com.fintrack.ceva.DTO;
 
+public class UsuarioDTO {
 
-import jakarta.persistence.*;
-
-
-@Entity
-@Table(name = "usuarios")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String nombres;
-    @Column(nullable = false)
     private String apellidos;
-    @Column(nullable = false, unique = true)
     private String correo;
-    @Column(nullable = false)
     private String celular;
-    @Column(nullable = false)
     private String sexo;
-    //Contructor por defecto para la persistencia
-    public Usuario (){}
 
-    //Contrusctor con parametros
-
-
-    public Usuario( String nombres, String apellidos, String correo, String celular, String sexo) {
+    public UsuarioDTO() {
+        this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.celular = celular;
         this.sexo = sexo;
     }
-
-    //Getters y Sett
-
 
     public Long getId() {
         return id;
