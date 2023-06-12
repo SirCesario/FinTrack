@@ -27,6 +27,7 @@ public class UsuarioServiceImp implements UsuarioService {
         usuario.setCorreo(usuarioDTO.getCorreo());
         usuario.setCelular(usuarioDTO.getCelular());
         usuario.setSexo(usuarioDTO.getSexo());
+        usuario.setIngresos(usuarioDTO.getIngresos());
         return usuarioRepository.save(usuario);
     }
 
@@ -50,6 +51,7 @@ public class UsuarioServiceImp implements UsuarioService {
         usuarioDTO.setCorreo(usuario.getCorreo());
         usuarioDTO.setCelular(usuario.getCelular());
         usuarioDTO.setSexo(usuario.getSexo());
+        usuarioDTO.setIngresos(usuario.getIngresos());
         return usuarioDTO;
     }
 }

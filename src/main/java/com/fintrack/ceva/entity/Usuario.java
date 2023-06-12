@@ -3,6 +3,8 @@ package com.fintrack.ceva.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 
 @Entity
 @Table(name = "usuarios")
@@ -21,22 +23,25 @@ public class Usuario {
     private String celular;
     @Column(nullable = false)
     private String sexo;
-    //Contructor por defecto para la persistencia
-    public Usuario (){}
 
+
+    @ManyToMany
+    private Set<Ingreso> ingresos;
+
+    public Usuario() {
+    }
     //Contrusctor con parametros
 
-
-    public Usuario( String nombres, String apellidos, String correo, String celular, String sexo) {
+    public Usuario(Long id, String nombres, String apellidos, String correo, String celular, String sexo, Set<Ingreso> ingresos) {
+        this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.celular = celular;
         this.sexo = sexo;
+        this.ingresos = ingresos;
+
     }
-
-    //Getters y Sett
-
 
     public Long getId() {
         return id;
@@ -85,4 +90,13 @@ public class Usuario {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+    public Set<Ingreso> getIngresos() {
+        return ingresos;
+    }
+
+    public void setIngresos(Set<Ingreso> ingresos) {
+        this.ingresos = ingresos;
+    }
+
 }
