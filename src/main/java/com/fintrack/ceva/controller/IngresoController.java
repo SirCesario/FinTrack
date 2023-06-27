@@ -24,6 +24,11 @@ public class IngresoController {
         return ResponseEntity.ok(ingresos);
     }
 
+    @GetMapping("/total")
+    public Long calcularTotal(){
+        Long totalIngresos = ingresoService.calcularTotalMontoIngresos();
+        return totalIngresos != null ? totalIngresos :0;
+    }
     @GetMapping("/{id}")
     public  ResponseEntity<?> obtenerIngresoPorId(@PathVariable Long id){
         String Mensaje = "";
