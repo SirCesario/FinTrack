@@ -7,6 +7,8 @@ import java.util.Set;
 public class UsuarioDTO {
 
     private Long id;
+    private String nombreUsuario;
+    private String password;
     private String nombres;
     private String apellidos;
     private String correo;
@@ -17,8 +19,10 @@ public class UsuarioDTO {
     public UsuarioDTO() {
 
     }
-    public UsuarioDTO(Long id, String nombres, String apellidos, String correo, String celular, String sexo, Set<Ingreso> ingresos) {
+    public UsuarioDTO(Long id, String nombreUsuario, String password, String nombres, String apellidos, String correo, String celular, String sexo, Set<Ingreso> ingresos) {
         this.id = id;
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -35,6 +39,22 @@ public class UsuarioDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNombres() {

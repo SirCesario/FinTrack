@@ -12,7 +12,10 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false)
+    private String nombreUsuario;
+    @Column(nullable = false)
+    private String password;
     @Column(nullable = false)
     private String nombres;
     @Column(nullable = false)
@@ -30,10 +33,11 @@ public class Usuario {
 
     public Usuario() {
     }
-    //Contrusctor con parametros
 
-    public Usuario(Long id, String nombres, String apellidos, String correo, String celular, String sexo, Set<Ingreso> ingresos) {
+    public Usuario(Long id,String nombreUsuario, String password, String nombres, String apellidos, String correo, String celular, String sexo, Set<Ingreso> ingresos) {
         this.id = id;
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -49,6 +53,22 @@ public class Usuario {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNombres() {

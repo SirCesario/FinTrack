@@ -22,6 +22,8 @@ public class UsuarioServiceImp implements UsuarioService {
     @Override
     public Usuario registrarUsuario(UsuarioDTO usuarioDTO) {
         Usuario usuario = new Usuario();
+        usuario.setNombreUsuario(usuarioDTO.getNombreUsuario());
+        usuario.setPassword(usuarioDTO.getPassword());
         usuario.setNombres(usuarioDTO.getNombres());
         usuario.setApellidos(usuarioDTO.getApellidos());
         usuario.setCorreo(usuarioDTO.getCorreo());
